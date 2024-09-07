@@ -6,6 +6,7 @@ const prisma = new PrismaClient();
 const cors = require('cors');
 const ExcelJS = require('exceljs');
 const app = express();
+// const students=require('./array.js')
 
 app.use(cors());
 
@@ -416,26 +417,26 @@ app.post('/download', async (req, res) => {
             registration_date: student.registration_date,
             student_count: student.student_count,
             institution_category: student.institution_category || '',
-            administrative_control_name: student.administrative_control.name,
+            administrative_control_name: student.administrative_control?.name,
             name_of_head: student.name_of_head,
             email_of_head: student.email_of_head,
             contact_of_head: student.contact_of_head,
             designation_of_head: student.designation_of_head,
             address_of_institute: student.address_of_institute,
-            district: student.district.name,
+            district: student.district?.name,
             pincode: student.pincode,
             local_body_type_name: student.local_body_type?.name || '',
             local_body: student.local_body,
-            block: student.block.name,
-            institution_type_name: student.institution_type.name,
+            block: student.block?.name,
+            institution_type_name: student.institution_type?.name,
             finance_type_name: student.finance_type.name,
-            academic_control_name: student.academic_control.name,
-            school_subcategory: student.sub_category.name,
+            academic_control_name: student.academic_control?.name,
+            school_subcategory: student.sub_category?.name,
             sametham_id: student.sametham_id,
             brc: student.brc_name.name,
             old_institute_id: student.old_institute_id,
-            district_name: student.district.name,
-            brc_name: student.brc_name.name,
+            district_name: student.district?.name,
+            brc_name: student.brc_name?.name,
         });
     });
   
