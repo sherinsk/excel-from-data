@@ -3,8 +3,11 @@ const express = require('express');
 const { PrismaClient } = require('@prisma/client');
 const path = require('path');
 const prisma = new PrismaClient();
+const cors = require('cors');
 const ExcelJS = require('exceljs');
 const app = express();
+
+app.use(cors());
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
