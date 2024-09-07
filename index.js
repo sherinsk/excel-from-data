@@ -433,10 +433,10 @@ app.post('/download', async (req, res) => {
             academic_control_name: student.academic_control?.name,
             school_subcategory: student.sub_category?.name,
             sametham_id: student.sametham_id,
-            brc: student.brc_name?.name,
+            brc: student?.brc_name?.name,
             old_institute_id: student.old_institute_id,
             district_name: student.district?.name,
-            brc_name: student.brc_name?.name,
+            brc_name: student?.brc_name?.name,
         });
     });
   
