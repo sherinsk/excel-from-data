@@ -54,8 +54,9 @@ app.post('/download', async (req, res) => {
     try {
       // Fetch student data from the database
       const {students}=req.body
+      console.log(students)
 
-      if(students.length===0)
+      if(!students)
       {
         return res.status(404).json({message:"No Data Found"})
       }
