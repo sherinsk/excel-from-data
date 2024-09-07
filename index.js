@@ -56,8 +56,8 @@ app.post('/download', async (req, res) => {
     try {
       // Fetch student data from the database
       const {students}=req.body
-      console.log(req.body)
-      console.log(students)
+      // console.log(req.body)
+      // console.log(students)
 
       if(!students)
       {
@@ -456,7 +456,7 @@ app.post('/download', async (req, res) => {
       }
       res.status(200).end();
     } catch (error) {
-      console.error(error);
+      console.log(error);
       res.status(500).json({ error: 'Something went wrong' });
     }
   });
