@@ -50,317 +50,317 @@ app.post('/students', async (req, res) => {
 app.post('/download', async (req, res) => {
     try {
       // Fetch student data from the database
-    //   const {students}=req.body
+      const {students}=req.body
 
-    const students=[{
-        "institute_id": 1,
-        "email_of_institute": "kunjumol1@butomy.in",
-        "institute_name": "IHRD College Of Engineeringg",
-        "registration_date": "2024-07-22",
-        "student_count": 13,
-        "institute_unique_id": "YIPAG00001",
-        "institution_category": null,
-        "administrative_control": {
-          "id": 1,
-          "name": "Directorate of Employment and Training - Government",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "name_of_head": "Ananthu",
-        "email_of_head": "kunjumol1@butomy.in",
-        "contact_of_head": "+918547971477",
-        "designation_of_head": "Principleh",
-        "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
-        "district_id": 2,
-        "pincode": "673521",
-        "local_body_id": 1042,
-        "local_body_type_id": 1,
-        "block_id": 13,
-        "institution_type": {
-          "id": 1,
-          "name": "Ncvt",
-          "created_at": "2024-06-11T09:20:16.000000Z",
-          "updated_at": "2024-06-11T09:20:16.000000Z",
-          "deleted_at": null,
-          "constant": null
-        },
-        "finance_type": {
-          "id": 1,
-          "name": "Government",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "institute_type": 1
-        },
-        "academic_control": {
-          "id": 1,
-          "name": "NCVT",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "administrative_control": 1,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "school_subcategory_id": 1,
-        "sametham_id": "fggg",
-        "spark_id": "ifi",
-        "brc_id": 1,
-        "old_institute_id": "22403",
-        "district": {
-          "id": 2,
-          "name": "Kollam",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "district_code": "B"
-        },
-        "local_body": null,
-        "local_body_type": {
-          "id": 1,
-          "name": "Grama Panchayath",
-          "created_at": "2023-12-22T07:20:29.000000Z",
-          "updated_at": "2023-12-22T07:20:29.000000Z",
-          "deleted_at": null
-        },
-        "institute_pocs": [],
-        "institute_facilitator": [],
-        "block": {
-          "id": 13,
-          "name": "Parassala Block",
-          "district_id": 1,
-          "created_at": "2024-06-14T06:25:52.000000Z",
-          "updated_at": "2024-06-14T06:25:52.000000Z",
-          "deleted_at": null
-        },
-        "sub_category": {
-          "id": 1,
-          "institute_type_id": 2,
-          "name": "Higher Secondary School",
-          "created_at": "2024-06-14T05:46:45.000000Z",
-          "updated_at": "2024-06-14T05:46:45.000000Z",
-          "deleted_at": null
-        },
-        "brc_name": {
-          "id": 1,
-          "name": "ATTINGAL",
-          "created_at": "2024-01-18T08:46:21.000000Z",
-          "updated_at": "2024-01-18T08:46:21.000000Z",
-          "deleted_at": null,
-          "district_id": 1
-        }
-      },
-      {
-        "institute_id": 1,
-        "email_of_institute": "kunjumol1@butomy.in",
-        "institute_name": "IHRD College Of Engineeringg",
-        "registration_date": "2024-07-22",
-        "student_count": 13,
-        "institute_unique_id": "YIPAG00001",
-        "institution_category": null,
-        "administrative_control": {
-          "id": 1,
-          "name": "Directorate of Employment and Training - Government",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "name_of_head": "Ananthu",
-        "email_of_head": "kunjumol1@butomy.in",
-        "contact_of_head": "+918547971477",
-        "designation_of_head": "Principleh",
-        "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
-        "district_id": 2,
-        "pincode": "673521",
-        "local_body_id": 1042,
-        "local_body_type_id": 1,
-        "block_id": 13,
-        "institution_type": {
-          "id": 1,
-          "name": "Ncvt",
-          "created_at": "2024-06-11T09:20:16.000000Z",
-          "updated_at": "2024-06-11T09:20:16.000000Z",
-          "deleted_at": null,
-          "constant": null
-        },
-        "finance_type": {
-          "id": 1,
-          "name": "Government",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "institute_type": 1
-        },
-        "academic_control": {
-          "id": 1,
-          "name": "NCVT",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "administrative_control": 1,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "school_subcategory_id": 1,
-        "sametham_id": "fggg",
-        "spark_id": "ifi",
-        "brc_id": 1,
-        "old_institute_id": "22403",
-        "district": {
-          "id": 2,
-          "name": "Kollam",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "district_code": "B"
-        },
-        "local_body": null,
-        "local_body_type": {
-          "id": 1,
-          "name": "Grama Panchayath",
-          "created_at": "2023-12-22T07:20:29.000000Z",
-          "updated_at": "2023-12-22T07:20:29.000000Z",
-          "deleted_at": null
-        },
-        "institute_pocs": [],
-        "institute_facilitator": [],
-        "block": {
-          "id": 13,
-          "name": "Parassala Block",
-          "district_id": 1,
-          "created_at": "2024-06-14T06:25:52.000000Z",
-          "updated_at": "2024-06-14T06:25:52.000000Z",
-          "deleted_at": null
-        },
-        "sub_category": {
-          "id": 1,
-          "institute_type_id": 2,
-          "name": "Higher Secondary School",
-          "created_at": "2024-06-14T05:46:45.000000Z",
-          "updated_at": "2024-06-14T05:46:45.000000Z",
-          "deleted_at": null
-        },
-        "brc_name": {
-          "id": 1,
-          "name": "ATTINGAL",
-          "created_at": "2024-01-18T08:46:21.000000Z",
-          "updated_at": "2024-01-18T08:46:21.000000Z",
-          "deleted_at": null,
-          "district_id": 1
-        }
-      },
-      {
-        "institute_id": 1,
-        "email_of_institute": "kunjumol1@butomy.in",
-        "institute_name": "IHRD College Of Engineeringg",
-        "registration_date": "2024-07-22",
-        "student_count": 13,
-        "institute_unique_id": "YIPAG00001",
-        "institution_category": null,
-        "administrative_control": {
-          "id": 1,
-          "name": "Directorate of Employment and Training - Government",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "name_of_head": "Ananthu",
-        "email_of_head": "kunjumol1@butomy.in",
-        "contact_of_head": "+918547971477",
-        "designation_of_head": "Principleh",
-        "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
-        "district_id": 2,
-        "pincode": "673521",
-        "local_body_id": 1042,
-        "local_body_type_id": 1,
-        "block_id": 13,
-        "institution_type": {
-          "id": 1,
-          "name": "Ncvt",
-          "created_at": "2024-06-11T09:20:16.000000Z",
-          "updated_at": "2024-06-11T09:20:16.000000Z",
-          "deleted_at": null,
-          "constant": null
-        },
-        "finance_type": {
-          "id": 1,
-          "name": "Government",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "institute_type": 1
-        },
-        "academic_control": {
-          "id": 1,
-          "name": "NCVT",
-          "institute_type": 1,
-          "finance_type": 1,
-          "institution_category": 225,
-          "administrative_control": 1,
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null
-        },
-        "school_subcategory_id": 1,
-        "sametham_id": "fggg",
-        "spark_id": "ifi",
-        "brc_id": 1,
-        "old_institute_id": "22403",
-        "district": {
-          "id": 2,
-          "name": "Kollam",
-          "created_at": null,
-          "updated_at": null,
-          "deleted_at": null,
-          "district_code": "B"
-        },
-        "local_body": null,
-        "local_body_type": {
-          "id": 1,
-          "name": "Grama Panchayath",
-          "created_at": "2023-12-22T07:20:29.000000Z",
-          "updated_at": "2023-12-22T07:20:29.000000Z",
-          "deleted_at": null
-        },
-        "institute_pocs": [],
-        "institute_facilitator": [],
-        "block": {
-          "id": 13,
-          "name": "Parassala Block",
-          "district_id": 1,
-          "created_at": "2024-06-14T06:25:52.000000Z",
-          "updated_at": "2024-06-14T06:25:52.000000Z",
-          "deleted_at": null
-        },
-        "sub_category": {
-          "id": 1,
-          "institute_type_id": 2,
-          "name": "Higher Secondary School",
-          "created_at": "2024-06-14T05:46:45.000000Z",
-          "updated_at": "2024-06-14T05:46:45.000000Z",
-          "deleted_at": null
-        },
-        "brc_name": {
-          "id": 1,
-          "name": "ATTINGAL",
-          "created_at": "2024-01-18T08:46:21.000000Z",
-          "updated_at": "2024-01-18T08:46:21.000000Z",
-          "deleted_at": null,
-          "district_id": 1
-        }
-      }]
+    // const students=[{
+    //     "institute_id": 1,
+    //     "email_of_institute": "kunjumol1@butomy.in",
+    //     "institute_name": "IHRD College Of Engineeringg",
+    //     "registration_date": "2024-07-22",
+    //     "student_count": 13,
+    //     "institute_unique_id": "YIPAG00001",
+    //     "institution_category": null,
+    //     "administrative_control": {
+    //       "id": 1,
+    //       "name": "Directorate of Employment and Training - Government",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "name_of_head": "Ananthu",
+    //     "email_of_head": "kunjumol1@butomy.in",
+    //     "contact_of_head": "+918547971477",
+    //     "designation_of_head": "Principleh",
+    //     "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
+    //     "district_id": 2,
+    //     "pincode": "673521",
+    //     "local_body_id": 1042,
+    //     "local_body_type_id": 1,
+    //     "block_id": 13,
+    //     "institution_type": {
+    //       "id": 1,
+    //       "name": "Ncvt",
+    //       "created_at": "2024-06-11T09:20:16.000000Z",
+    //       "updated_at": "2024-06-11T09:20:16.000000Z",
+    //       "deleted_at": null,
+    //       "constant": null
+    //     },
+    //     "finance_type": {
+    //       "id": 1,
+    //       "name": "Government",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "institute_type": 1
+    //     },
+    //     "academic_control": {
+    //       "id": 1,
+    //       "name": "NCVT",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "administrative_control": 1,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "school_subcategory_id": 1,
+    //     "sametham_id": "fggg",
+    //     "spark_id": "ifi",
+    //     "brc_id": 1,
+    //     "old_institute_id": "22403",
+    //     "district": {
+    //       "id": 2,
+    //       "name": "Kollam",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "district_code": "B"
+    //     },
+    //     "local_body": null,
+    //     "local_body_type": {
+    //       "id": 1,
+    //       "name": "Grama Panchayath",
+    //       "created_at": "2023-12-22T07:20:29.000000Z",
+    //       "updated_at": "2023-12-22T07:20:29.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "institute_pocs": [],
+    //     "institute_facilitator": [],
+    //     "block": {
+    //       "id": 13,
+    //       "name": "Parassala Block",
+    //       "district_id": 1,
+    //       "created_at": "2024-06-14T06:25:52.000000Z",
+    //       "updated_at": "2024-06-14T06:25:52.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "sub_category": {
+    //       "id": 1,
+    //       "institute_type_id": 2,
+    //       "name": "Higher Secondary School",
+    //       "created_at": "2024-06-14T05:46:45.000000Z",
+    //       "updated_at": "2024-06-14T05:46:45.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "brc_name": {
+    //       "id": 1,
+    //       "name": "ATTINGAL",
+    //       "created_at": "2024-01-18T08:46:21.000000Z",
+    //       "updated_at": "2024-01-18T08:46:21.000000Z",
+    //       "deleted_at": null,
+    //       "district_id": 1
+    //     }
+    //   },
+    //   {
+    //     "institute_id": 1,
+    //     "email_of_institute": "kunjumol1@butomy.in",
+    //     "institute_name": "IHRD College Of Engineeringg",
+    //     "registration_date": "2024-07-22",
+    //     "student_count": 13,
+    //     "institute_unique_id": "YIPAG00001",
+    //     "institution_category": null,
+    //     "administrative_control": {
+    //       "id": 1,
+    //       "name": "Directorate of Employment and Training - Government",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "name_of_head": "Ananthu",
+    //     "email_of_head": "kunjumol1@butomy.in",
+    //     "contact_of_head": "+918547971477",
+    //     "designation_of_head": "Principleh",
+    //     "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
+    //     "district_id": 2,
+    //     "pincode": "673521",
+    //     "local_body_id": 1042,
+    //     "local_body_type_id": 1,
+    //     "block_id": 13,
+    //     "institution_type": {
+    //       "id": 1,
+    //       "name": "Ncvt",
+    //       "created_at": "2024-06-11T09:20:16.000000Z",
+    //       "updated_at": "2024-06-11T09:20:16.000000Z",
+    //       "deleted_at": null,
+    //       "constant": null
+    //     },
+    //     "finance_type": {
+    //       "id": 1,
+    //       "name": "Government",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "institute_type": 1
+    //     },
+    //     "academic_control": {
+    //       "id": 1,
+    //       "name": "NCVT",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "administrative_control": 1,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "school_subcategory_id": 1,
+    //     "sametham_id": "fggg",
+    //     "spark_id": "ifi",
+    //     "brc_id": 1,
+    //     "old_institute_id": "22403",
+    //     "district": {
+    //       "id": 2,
+    //       "name": "Kollam",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "district_code": "B"
+    //     },
+    //     "local_body": null,
+    //     "local_body_type": {
+    //       "id": 1,
+    //       "name": "Grama Panchayath",
+    //       "created_at": "2023-12-22T07:20:29.000000Z",
+    //       "updated_at": "2023-12-22T07:20:29.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "institute_pocs": [],
+    //     "institute_facilitator": [],
+    //     "block": {
+    //       "id": 13,
+    //       "name": "Parassala Block",
+    //       "district_id": 1,
+    //       "created_at": "2024-06-14T06:25:52.000000Z",
+    //       "updated_at": "2024-06-14T06:25:52.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "sub_category": {
+    //       "id": 1,
+    //       "institute_type_id": 2,
+    //       "name": "Higher Secondary School",
+    //       "created_at": "2024-06-14T05:46:45.000000Z",
+    //       "updated_at": "2024-06-14T05:46:45.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "brc_name": {
+    //       "id": 1,
+    //       "name": "ATTINGAL",
+    //       "created_at": "2024-01-18T08:46:21.000000Z",
+    //       "updated_at": "2024-01-18T08:46:21.000000Z",
+    //       "deleted_at": null,
+    //       "district_id": 1
+    //     }
+    //   },
+    //   {
+    //     "institute_id": 1,
+    //     "email_of_institute": "kunjumol1@butomy.in",
+    //     "institute_name": "IHRD College Of Engineeringg",
+    //     "registration_date": "2024-07-22",
+    //     "student_count": 13,
+    //     "institute_unique_id": "YIPAG00001",
+    //     "institution_category": null,
+    //     "administrative_control": {
+    //       "id": 1,
+    //       "name": "Directorate of Employment and Training - Government",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "name_of_head": "Ananthu",
+    //     "email_of_head": "kunjumol1@butomy.in",
+    //     "contact_of_head": "+918547971477",
+    //     "designation_of_head": "Principleh",
+    //     "address_of_institute": "Kollam tholpikan avula, Kerala · 0481 242 0025",
+    //     "district_id": 2,
+    //     "pincode": "673521",
+    //     "local_body_id": 1042,
+    //     "local_body_type_id": 1,
+    //     "block_id": 13,
+    //     "institution_type": {
+    //       "id": 1,
+    //       "name": "Ncvt",
+    //       "created_at": "2024-06-11T09:20:16.000000Z",
+    //       "updated_at": "2024-06-11T09:20:16.000000Z",
+    //       "deleted_at": null,
+    //       "constant": null
+    //     },
+    //     "finance_type": {
+    //       "id": 1,
+    //       "name": "Government",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "institute_type": 1
+    //     },
+    //     "academic_control": {
+    //       "id": 1,
+    //       "name": "NCVT",
+    //       "institute_type": 1,
+    //       "finance_type": 1,
+    //       "institution_category": 225,
+    //       "administrative_control": 1,
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null
+    //     },
+    //     "school_subcategory_id": 1,
+    //     "sametham_id": "fggg",
+    //     "spark_id": "ifi",
+    //     "brc_id": 1,
+    //     "old_institute_id": "22403",
+    //     "district": {
+    //       "id": 2,
+    //       "name": "Kollam",
+    //       "created_at": null,
+    //       "updated_at": null,
+    //       "deleted_at": null,
+    //       "district_code": "B"
+    //     },
+    //     "local_body": null,
+    //     "local_body_type": {
+    //       "id": 1,
+    //       "name": "Grama Panchayath",
+    //       "created_at": "2023-12-22T07:20:29.000000Z",
+    //       "updated_at": "2023-12-22T07:20:29.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "institute_pocs": [],
+    //     "institute_facilitator": [],
+    //     "block": {
+    //       "id": 13,
+    //       "name": "Parassala Block",
+    //       "district_id": 1,
+    //       "created_at": "2024-06-14T06:25:52.000000Z",
+    //       "updated_at": "2024-06-14T06:25:52.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "sub_category": {
+    //       "id": 1,
+    //       "institute_type_id": 2,
+    //       "name": "Higher Secondary School",
+    //       "created_at": "2024-06-14T05:46:45.000000Z",
+    //       "updated_at": "2024-06-14T05:46:45.000000Z",
+    //       "deleted_at": null
+    //     },
+    //     "brc_name": {
+    //       "id": 1,
+    //       "name": "ATTINGAL",
+    //       "created_at": "2024-01-18T08:46:21.000000Z",
+    //       "updated_at": "2024-01-18T08:46:21.000000Z",
+    //       "deleted_at": null,
+    //       "district_id": 1
+    //     }
+    //   }]
   
       // Create a new Excel workbook and worksheet
       const workbook = new ExcelJS.Workbook();
