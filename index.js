@@ -445,7 +445,7 @@ app.post('/download', async (req, res) => {
   
       // Write the file to the response
       await workbook.xlsx.write(res);
-      res.end();
+      res.status(200).end();
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Something went wrong' });
