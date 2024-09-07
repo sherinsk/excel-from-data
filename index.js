@@ -429,7 +429,7 @@ app.post('/download', async (req, res) => {
             local_body: student.local_body,
             block: student.block?.name,
             institution_type_name: student.institution_type?.name,
-            finance_type_name: student.finance_type.name,
+            finance_type_name: student.finance_type?.name,
             academic_control_name: student.academic_control?.name,
             school_subcategory: student.sub_category?.name,
             sametham_id: student.sametham_id,
