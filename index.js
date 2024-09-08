@@ -16,7 +16,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 const CHUNK_SIZE = 1000; // Number of records per chunk
-const MAX_RECORDS = 100000;
+const MAX_RECORDS = 10000;
 
 
 app.get('/', (req, res) => {
@@ -479,7 +479,7 @@ app.post('/download', async (req, res) => {
     try {
       // Fetch all students from the database
       let offset = 0;
-    let allStudents = [];
+      let allStudents = [];
 
     while (allStudents.length < MAX_RECORDS) {
       // Fetch the next chunk of records
