@@ -475,7 +475,27 @@ app.post('/download', async (req, res) => {
   app.get('/students', async (req, res) => {
     try {
       // Fetch all students from the database
-      const students = await prisma.student.findMany();
+      const students = await prisma.student.findMany({
+        select: {
+          id: true,
+          name: true,
+          age: true,
+          email: true,
+          phoneNumber: true,
+          address: true,
+          dateOfBirth: true,
+          enrollmentDate: true,
+          course: true,
+          grade: true,
+          isActive: true,
+          guardianName: true,
+          guardianPhone: true,
+          gender: true,
+          nationality: true,
+          profileImageUrl: true,
+          createdAt: true,
+        },
+      });
   
       res.status(200).json(students);
     } catch (error) {
@@ -485,6 +505,6 @@ app.post('/download', async (req, res) => {
   });
 
 // Start the server
-app.listen(3000, () => {
+app.listen(8000, () => {
   console.log('Server is running on http://localhost:3000');
 });
