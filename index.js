@@ -21,24 +21,34 @@ app.get('/', (req, res) => {
   });
 
 // Bulk add student data
-app.post('/students', async (req, res) => { 
-
+app.post('/students', async (req, res) => {
   const generateStudents = (count) => {
-
-    
+    const students = [];
     for (let i = 1; i <= count; i++) {
       students.push({
         name: `Student ${i}`,
         age: 18 + (i % 5), // Random age between 18-22
-        email: `student${i}@example.com`
+        email: `student${i}@example.com`,
+        phoneNumber: `123456789${i}`, // Unique phone number
+        address: `Address ${i}`,
+        dateOfBirth: new Date(2000 + (i % 5), i % 12, i % 28), // Random date of birth
+        enrollmentDate: new Date(), // Current date as enrollment date
+        course: `Course ${(i % 5) + 1}`, // Courses 1-5
+        grade: ['A', 'B', 'C', 'D', 'F'][i % 5], // Grades from A to F
+        isActive: i % 2 === 0, // Alternating active/inactive
+        guardianName: `Guardian ${i}`,
+        guardianPhone: `987654321${i}`,
+        gender: i % 2 === 0 ? 'Male' : 'Female', // Alternating gender
+        nationality: ['Indian', 'American', 'Canadian', 'British', 'Australian'][i % 5], // 5 nationalities
+        profileImageUrl: `https://example.com/profile${i}.jpg`, // Sample image URL
+        createdAt: new Date(), // Current date
       });
     }
-  
+
     return students;
   };
 
-  var studentArray=generateStudents(1000);
-
+  const studentArray = generateStudents(200000);
 
   try {
     const createdStudents = await prisma.student.createMany({
@@ -51,6 +61,7 @@ app.post('/students', async (req, res) => {
     res.status(500).json({ error: 'Something went wrong' });
   }
 });
+
 
 app.post('/download', async (req, res) => {
     try {
@@ -458,6 +469,18 @@ app.post('/download', async (req, res) => {
     } catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Something went wrong' });
+    }
+  });
+
+  app.get('/students', async (req, res) => {
+    try {
+      // Fetch all students from the database
+      const students = await prisma.student.findMany();
+  
+      res.status(200).json(students);
+    } catch (error) {
+      console.error('Error fetching students:', error);
+      res.status(500).json({ error: 'Something went wrong while fetching students.' });
     }
   });
 
