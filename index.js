@@ -495,6 +495,7 @@ app.post('/download', async (req, res) => {
           profileImageUrl: true,
           createdAt: true,
         },
+        take:5000
       });
   
       res.status(200).json(students);
