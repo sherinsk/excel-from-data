@@ -481,6 +481,7 @@ app.post('/download', async (req, res) => {
           name: true,
           age: true,
           email: true,
+          phoneNumber: true,
           address: true,
           dateOfBirth: true,
           enrollmentDate: true,
@@ -493,7 +494,8 @@ app.post('/download', async (req, res) => {
           nationality: true,
           profileImageUrl: true,
           createdAt: true,
-        }
+        },
+        take:5000
       });
   
       res.status(200).json(students);
