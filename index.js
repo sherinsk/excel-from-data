@@ -15,6 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
+const CHUNK_SIZE = 1000; // Number of records per chunk
+const MAX_RECORDS = 100000;
+
 
 app.get('/', (req, res) => {
     res.render('index');
@@ -475,6 +478,11 @@ app.post('/download', async (req, res) => {
   app.get('/students', async (req, res) => {
     try {
       // Fetch all students from the database
+      let offset = 0;
+    let allStudents = [];
+
+    while (allStudents.length < MAX_RECORDS) {
+      // Fetch the next chunk of records
       const students = await prisma.student.findMany({
         select: {
           id: true,
@@ -495,10 +503,23 @@ app.post('/download', async (req, res) => {
           profileImageUrl: true,
           createdAt: true,
         },
-        take:5000
+        take: CHUNK_SIZE,
+        skip: offset, // Skip already fetched records
       });
+
+      if (students.length === 0) {
+        // Exit loop if no more records are found
+        break;
+      }
+
+      allStudents = allStudents.concat(students);
+      offset += CHUNK_SIZE; // Move to the next chunk
+    }
+
+    // Limit the total number of records to MAX_RECORDS
+    allStudents = allStudents.slice(0, MAX_RECORDS);
   
-      res.status(200).json(students);
+      res.status(200).json(allStudents);
     } catch (error) {
       console.error('Error fetching students:', error);
       res.status(500).json({ error: 'Something went wrong while fetching students.' });
