@@ -481,7 +481,6 @@ app.post('/download', async (req, res) => {
           name: true,
           age: true,
           email: true,
-          phoneNumber: true,
           address: true,
           dateOfBirth: true,
           enrollmentDate: true,
